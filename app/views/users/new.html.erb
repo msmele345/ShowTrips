@@ -2,7 +2,7 @@
 
 <div class="user-login">
   <%= render 'shared/errors', locals: {errors: @errors} if @errors %>
-  <%= form_with @user do |user| %>
+  <%= form_for @user do |user| %>
     <%= user.text_field :first_name, placeholder: "First Name" %><br><br>
     <%= user.text_field :last_name, placeholder: "Last Name" %><br><br>
     <%= user.text_field :email, placeholder: "Email" %><br><br>

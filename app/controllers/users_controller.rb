@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       @errors = @user.errors.full_messages
       # flash[:notice] = "Something went wrong, please try again"
       render :new
-
+    end
   end
 
   def show
@@ -26,4 +26,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password)
   end
+
+
 end

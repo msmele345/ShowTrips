@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :user, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show]
 
   resources :concerts do
     resources :attendances, only: [:new, :create]
   end
 
-
-    get '/logout', to: 'sessions#destroy'
+  resources :sessions, only: [:new, :create, :destroy]
 
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
@@ -17,3 +16,10 @@ Rails.application.routes.draw do
 
 
 end
+
+
+##TODO
+#Add concerts
+##Develop user show
+##finish attendees
+##pseduo out intineraries

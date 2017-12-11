@@ -2,11 +2,8 @@
 
 <div class="concert-show-box">
   <ul>
-    <li>
-      <% @concerts.each do |show| %>
-        <%= show.band %>
+      <% @concerts.each do |concert| %>
+       <li><%= render partial: 'concert', locals: {concert: concert} %></li>
       <% end %>
-    </li>
-
   </ul>
 </div>
