@@ -1,0 +1,12 @@
+<h2 class="concert-header">Upcoming Shows:</h2>
+
+<div class="concert-show-box">
+  <ul>
+    <li>
+      <% @concerts.each do |show| %>
+        <%= show.band %>
+      <% end %>
+    </li>
+
+  </ul>
+</div>
