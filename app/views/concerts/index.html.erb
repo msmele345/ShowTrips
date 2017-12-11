@@ -1,0 +1,9 @@
+<h2 class="concert-header">Upcoming Shows:</h2>
+
+<div class="concert-show-box">
+  <ul>
+      <% @concerts.each do |concert| %>
+       <li><%= render partial: 'concert', locals: {concert: concert} %></li>
+      <% end %>
+  </ul>
+</div>

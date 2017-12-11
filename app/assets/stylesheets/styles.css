@@ -1,0 +1,80 @@
+body {
+      margin: 0;
+      padding: 0;
+     background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+    }
+
+.main-nav {
+  padding-left: 10px;
+  float: left;
+}
+
+.login-bar{
+  padding-top: 8px;
+  font-family: 'Oswald', sans-serif;
+  padding-right: 10px;
+  float: right;
+
+}
+
+nav ul {
+  list-style: none;
+  background-color: #a6c1ee;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display:inline;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1em;
+  line-height: 40px;
+  height: 40px;
+}
+
+.concert-header{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.5em;
+  margin-left: .5cm;
+  margin-top: 2cm;
+}
+
+.layout-header{
+  font-family: 'Permanent Marker', cursive;
+  letter-spacing: 2px;
+  margin-left: .5cm;
+  font-size: 2.5em;
+
+}
+
+.user-login{
+  display: flex;
+  justify-content: center;
+}
+
+.login-form{
+  display: flex;
+  justify-content: center;
+}
+
+.attend-button{
+  width:30px;
+  margin-left: 2cm;
+}
+
+.concert-show-box{
+  margin-left: 1cm;
+}
+
+.concert-show-box strong{
+  font-family: 'Permanent Marker', cursive;
+  letter-spacing: 2px;
+  font-size: 1.5em;
+}
+
+.concert-show-box ul dt{
+  font-family: 'Lobster', cursive
+  letter-spacing: 2px;
+  font-size: 1em;
+}

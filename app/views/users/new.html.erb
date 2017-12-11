@@ -1,0 +1,13 @@
+<h2 align="center">Sign up!</h2>
+
+<div class="user-login">
+  <%= render 'shared/errors', locals: {errors: @errors} if @errors %>
+  <%= form_for @user do |user| %>
+    <%= user.text_field :first_name, placeholder: "First Name" %><br><br>
+    <%= user.text_field :last_name, placeholder: "Last Name" %><br><br>
+    <%= user.text_field :email, placeholder: "Email" %><br><br>
+    <%= user.password_field :password, placeholder: "password" %><br><br>
+    <%= user.submit "Register"  %>
+
+  <% end  %>
+</div>
