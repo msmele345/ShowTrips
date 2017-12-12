@@ -13,7 +13,7 @@ class AttendancesController < ApplicationController
     @attendance.concert_id = params[:concert_id]
 
     if @attendance.save
-      redirect_to root_path
+      redirect_to concert_path(params[:concert_id])
     else
       @errors = @attendance.errors.full_messages
       render :show

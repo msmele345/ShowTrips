@@ -22,8 +22,8 @@
 
 <div class="add-attendee">
   <% if logged_in? %>
-      <%= form_tag [@concert, @attendance], url: concert_attendances_path(@concert), method: 'POST' do |t| %>
-        <%= submit_tag "Enjoy the show!" %>
+      <%= form_tag [@concert, @attendance], url: concert_attendances_path(@concert),  method: 'POST', id: "attendee-form" do |t| %>
+        <%= submit_tag "I'll be there!" %>
     <% end  %>
   <% end %>
 </div>

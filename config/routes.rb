@@ -23,7 +23,6 @@ end
 
 
 ##TODO
-#Add concerts
-##Develop user show
-##finish attendees
 ##pseduo out intineraries
+##Develop user show
+
