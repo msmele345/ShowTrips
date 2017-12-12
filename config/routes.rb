@@ -12,7 +12,11 @@ Rails.application.routes.draw do
     post '/login', to: 'sessions#create'
     get '/logout', to: 'sessions#destroy'
 
+    post '/concerts/:concert_id', to: "attendances#create"
+
     root 'concerts#index'
+
+
 
 
 end

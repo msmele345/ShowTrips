@@ -1,0 +1,29 @@
+
+<div>
+  <%= render partial: 'details' %>
+</div>
+
+
+<div class="concert-deetz">
+  <ul>
+   <dt>Location: <%= @concert.location %></dt><br>
+   <dt>Date: <%= set_date(@concert.date) %></dt><br>
+   <dt>Time: <%= set_time(@concert.start_time) %></dt><br>
+  </ul>
+</div>
+
+
+<div class="attendee-list">
+  <h2 class="attendee-header">Who is all going?</h2>
+  <ul>
+    <dt><%= render partial: 'attendee', collection: @concert.attendees %></dt>
+  </ul>
+</div>
+
+<div class="add-attendee">
+  <% if logged_in? %>
+      <%= form_tag [@concert, @attendance], url: concert_attendances_path(@concert), method: 'POST' do |t| %>
+        <%= submit_tag "Enjoy the show!" %>
+    <% end  %>
+  <% end %>
+</div>
