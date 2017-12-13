@@ -1,1 +1,37 @@
-<h1>Get money make plans yo!</h1>
+
+
+<h1 class="new-int-header">Going to see <%= @concert.band %> at <%= @concert.venue %>?</h1>
+
+
+<div class="new-int-form">
+  <%= render partial: 'shared/errors', locals: {errors: @errors} if @errors %>
+  <p>
+    <%= form_tag [@concert, @itinerary], url: concert_itineraries_path(@concert), method: "POST" do |f| %>
+    </p>
+
+    <p>
+      <strong>Hotel/Lodging:</strong><br>
+      <%= text_area_tag :hotel %>
+    </p>
+
+    <p>
+      <strong>Flight Information:</strong><br>
+      <%= text_area_tag :flight_info %>
+    </p>
+
+    <p>
+      <strong>Arrival Date:</strong><br>
+      <%= date_field_tag(:arrival_date, Date.today)%>
+    </p>
+
+    <p>
+      <strong>Return Date:</strong><br>
+      <%= date_field_tag(:return_date, Date.today)%>
+    </p>
+
+    <p>
+      <%= submit_tag "Save Itinerary" %>
+    </p>
+
+  <% end  %>
+</div>
