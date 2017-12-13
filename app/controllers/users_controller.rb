@@ -12,7 +12,6 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       @errors = @user.errors.full_messages
-      # flash[:notice] = "Something went wrong, please try again"
       render :new
     end
   end

@@ -6,20 +6,27 @@ Rails.application.routes.draw do
     resources :attendances, only: [:new, :create]
   end
 
+  resources :concerts do
+    resources :intineraries, only: [:new, :create, :show,:destroy]
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
 
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
     get '/logout', to: 'sessions#destroy'
 
+    post '/concerts/:concert_id', to: "attendances#create"
+
     root 'concerts#index'
+
+
 
 
 end
 
 
 ##TODO
-#Add concerts
-##Develop user show
-##finish attendees
 ##pseduo out intineraries
+##Develop user show
+

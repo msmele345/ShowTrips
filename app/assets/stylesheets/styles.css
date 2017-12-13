@@ -78,3 +78,17 @@ nav li {
   letter-spacing: 2px;
   font-size: 1em;
 }
+
+.band-title {
+  padding-left: 20px;
+}
+
+.attendee-header {
+  padding-left: 20px;
+
+}
+
+.add-itinerary {
+  position: absolute;
+  float: right;
+}

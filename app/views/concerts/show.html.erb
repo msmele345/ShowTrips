@@ -1,0 +1,34 @@
+
+<div>
+  <%= render partial: 'details' %>
+</div>
+
+
+<div class="concert-deetz">
+  <ul>
+   <dt>Location: <%= @concert.location %></dt><br>
+   <dt>Date: <%= set_date(@concert.date) %></dt><br>
+   <dt>Time: <%= set_time(@concert.start_time) %></dt><br>
+  </ul>
+</div>
+
+
+<div class="attendee-list">
+  <h2 class="attendee-header">Who is all going?</h2>
+  <ul>
+    <dt><%= render partial: 'attendee', collection: @concert.attendees %></dt>
+  </ul>
+</div>
+
+<div class="add-attendee">
+  <% if logged_in? %>
+      <%= form_tag [@concert, @attendance], url: concert_attendances_path(@concert),  method: 'POST', id: "attendee-form" do |t| %>
+        <%= submit_tag "I'll be there!" %>
+    <% end  %>
+  <% end %>
+</div>
+
+<div class="add-itinerary">
+  <h3>Going? Add your trips details: </h3>
+  <p><%= link_to "New Intinerary", new_concert_intinerary_path(@concert) %></p>
+</div
