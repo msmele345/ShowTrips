@@ -87,3 +87,8 @@ nav li {
   padding-left: 20px;
 
 }
+
+.add-itinerary {
+  position: absolute;
+  float: right;
+}

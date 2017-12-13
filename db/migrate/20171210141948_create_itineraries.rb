@@ -5,7 +5,8 @@ class CreateItineraries < ActiveRecord::Migration[5.1]
       t.date :arrival_date
       t.date :return_date
       t.string :flight_info
-      t.references :user
+      t.references :attendee
+      t.references :concert
 
 
       t.timestamps

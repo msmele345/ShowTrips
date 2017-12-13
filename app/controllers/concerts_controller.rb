@@ -4,6 +4,7 @@ class ConcertsController < ApplicationController
 
   def index
     @concerts = Concert.all.order(:date)
+    @upcoming_concerts = @concerts.select {|concert| concert.upcoming?}
   end
 
   def show

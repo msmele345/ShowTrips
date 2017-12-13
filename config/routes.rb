@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :attendances, only: [:new, :create]
   end
 
+  resources :concerts do
+    resources :intineraries, only: [:new, :create, :show,:destroy]
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
 
     get '/login', to: 'sessions#new'

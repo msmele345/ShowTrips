@@ -1,11 +1,26 @@
+$(function(){
 
-// var Attend = {
+
+  $("#attendee-form").on("submit", function(e){
 
 
-// }
+    var $form = $(this)
+    var url = $form.attr("url")
+    var method = "POST"
+    var data = $form.serialize();
 
-// $(function(){
+    $.ajax({
+      data: data,
+      url: url,
+      method: method,
+      dataType: 'JSON'
+    }).done(function(response){
+      $(".attendee-list").append(response.show);
 
-//   console.log("this works")
+      console.log(response.show)
 
-// });
+    })
+
+  })
+
+});
