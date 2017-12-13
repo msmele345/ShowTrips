@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :concerts do
-    resources :intineraries, only: [:new, :create, :show,:destroy]
+    resources :itineraries, only: [:new, :create, :show,:destroy]
   end
 
   resources :sessions, only: [:new, :create, :destroy]
@@ -27,6 +27,7 @@ end
 
 
 ##TODO
-##pseduo out intineraries
+##Clean up show view with nice css and buttons
 ##Develop user show
+##Itinerary show? Where are these displayed othert than user profile?
 
