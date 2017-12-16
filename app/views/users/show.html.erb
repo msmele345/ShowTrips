@@ -1,0 +1,22 @@
+<h1 class="user-show-header">
+  <%= @user.first_name %> 's ShowTrips
+</h1>
+
+
+<div class="user-show-box">
+  <% if @users.include?(current_user.id) %>
+  <ul>
+      <% @itineraries.each do |trip| %>
+      <p>Hotel:</p>
+        <dt><%= trip.hotel %></dt>
+      <p>Flight Info:</p>
+        <dt><%= trip.flight_info %></dt>
+      <p>Arrival Date:</p>
+        <dt><%= pretty_date(trip.arrival_date) %></dt>
+      <p>Return Date:</p>
+        <dt><%= pretty_date(trip.return_date) %></dt>
+
+      <% end %>
+  </ul>
+  <% end %>
+</div>

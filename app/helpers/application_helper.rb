@@ -31,4 +31,8 @@ module ApplicationHelper
     date.strftime("%m/%d/%y")
   end
 
+  def pretty_date(date)
+    date.strftime("%B %dth '%y")
+  end
+
 end

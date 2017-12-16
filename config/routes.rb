@@ -29,5 +29,6 @@ end
 ##TODO
 ##Clean up show view with nice css and buttons
 ##Develop user show
+##create partials showing int info
 ##Itinerary show? Where are these displayed othert than user profile?
 

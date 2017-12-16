@@ -18,6 +18,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(:id => params[:id])
+    @itineraries = Itinerary.all
+    @users = Itinerary.pluck(:attendee_id)
+    render :show
   end
 
   private
