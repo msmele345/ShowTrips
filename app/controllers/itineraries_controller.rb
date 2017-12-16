@@ -15,7 +15,7 @@ class ItinerariesController < ApplicationController
 
 
     if @itinerary.save
-       redirect_to concert_path(params[:concert_id])
+       redirect_to user_path(current_user.id)
     else
       @errors = @itinerary.errors.full_messages
       render :new
@@ -33,7 +33,7 @@ class ItinerariesController < ApplicationController
   private
 
   def itinerary_params
-    params.permit(:hotel, :flight_info, :arrival_date, :return_date)
+    params.permit(:name, :hotel, :flight_info, :arrival_date, :return_date)
   end
 
 end

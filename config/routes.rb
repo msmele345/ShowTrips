@@ -27,8 +27,11 @@ end
 
 
 ##TODO
-##Clean up show view with nice css and buttons
-##Develop user show
+
+##ADD messaging when adding an itinerary
+##STYLE USER SHOW BADLY
+
+
 ##create partials showing int info
 ##Itinerary show? Where are these displayed othert than user profile?
-
+##CSS
