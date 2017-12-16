@@ -10,10 +10,9 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.new(itinerary_params)
     @concert = Concert.find(params[:concert_id])
 
-
     @itinerary.attendee_id = current_user.id
-    p"$$$$$$$$$$"
-    p params
+    @itinerary.concert_id = params[:concert_id]
+
 
     if @itinerary.save
        redirect_to concert_path(params[:concert_id])
