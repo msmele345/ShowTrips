@@ -35,12 +35,14 @@ ActiveRecord::Schema.define(version: 20171210142021) do
   end
 
   create_table "itineraries", force: :cascade do |t|
+    t.string "name"
     t.string "hotel"
     t.date "arrival_date"
     t.date "return_date"
     t.string "flight_info"
     t.bigint "attendee_id"
     t.bigint "concert_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["attendee_id"], name: "index_itineraries_on_attendee_id"

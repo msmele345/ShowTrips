@@ -4,9 +4,11 @@
 
 
 <div class="user-show-box">
-  <% if @users.include?(current_user.id) %>
+  <% if logged_in? && @users.include?(current_user.id) %>
   <ul>
       <% @itineraries.each do |trip| %>
+      <p>Trip Name:</p>
+        <dt><%= trip.name %></dt>
       <p>Hotel:</p>
         <dt><%= trip.hotel %></dt>
       <p>Flight Info:</p>
