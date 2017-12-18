@@ -29,6 +29,9 @@ class ItinerariesController < ApplicationController
 
 
   def destroy
+    @itinerary = Itinerary.find_by(:id => params[:trip])
+    @itinerary.destroy
+    redirect_to user_path(current_user.id)
   end
 
   private
