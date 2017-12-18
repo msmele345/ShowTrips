@@ -15,6 +15,7 @@ class ItinerariesController < ApplicationController
 
 
     if @itinerary.save
+       current_user.itineraries << @itinerary
        redirect_to user_path(current_user.id)
     else
       @errors = @itinerary.errors.full_messages
@@ -28,6 +29,9 @@ class ItinerariesController < ApplicationController
 
 
   def destroy
+    @itinerary = Itinerary.find_by(:id => params[:trip])
+    @itinerary.destroy
+    redirect_to user_path(current_user.id)
   end
 
   private

@@ -1,5 +1,5 @@
 <h1 class="user-show-header">
-  <%= @user.first_name %> 's ShowTrips
+  <%= @user.first_name %> 's upcoming trips:
 </h1>
 
 
@@ -7,16 +7,22 @@
   <% if logged_in? && @users.include?(current_user.id) %>
   <ul>
       <% @itineraries.each do |trip| %>
-      <p>Trip Name:</p>
-        <dt><%= trip.name %></dt>
+    <dt>
+      <h2 class="trip-name">
+        <%= trip.name %>
+      </h2>
+      at:
+      <strong class='location'><%= trip.concert.venue %> - <%= trip.concert.location %></strong>
       <p>Hotel:</p>
-        <dt><%= trip.hotel %></dt>
+        <%= trip.hotel %>
       <p>Flight Info:</p>
-        <dt><%= trip.flight_info %></dt>
+        <%= trip.flight_info %>
       <p>Arrival Date:</p>
-        <dt><%= pretty_date(trip.arrival_date) %></dt>
+        <%= pretty_date(trip.arrival_date) %>
       <p>Return Date:</p>
-        <dt><%= pretty_date(trip.return_date) %></dt>
+        <%= pretty_date(trip.return_date) %>
+      <p><%= button_to "delete", @itinerary, method: :delete, params: {trip: trip.id} %></p>
+    </dt>
 
       <% end %>
   </ul>

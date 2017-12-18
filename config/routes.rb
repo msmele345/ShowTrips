@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     post '/login', to: 'sessions#create'
     get '/logout', to: 'sessions#destroy'
 
+    delete '/users/:user_id', to: "itineraries#destroy"
+
     post '/concerts/:concert_id', to: "attendances#create"
 
     root 'concerts#index'
@@ -27,11 +29,11 @@ end
 
 
 ##TODO
+##Add styling for delete button
+##add edit button
+## style itinerary show
 
-##ADD messaging when adding an itinerary
-##STYLE USER SHOW BADLY
-
-
+##AJAX??
 ##create partials showing int info
 ##Itinerary show? Where are these displayed othert than user profile?
 ##CSS
