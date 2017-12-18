@@ -15,6 +15,7 @@ class ItinerariesController < ApplicationController
 
 
     if @itinerary.save
+       current_user.itineraries << @itinerary
        redirect_to user_path(current_user.id)
     else
       @errors = @itinerary.errors.full_messages
