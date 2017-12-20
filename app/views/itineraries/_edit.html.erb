@@ -1,0 +1,36 @@
+  <div class="edit-form">
+    <p>
+      <%= form_tag @itinerary_path, :method => "PATCH" do |f| %>
+    </p>
+
+    <p>
+      <strong>Trip Name:</strong><br>
+      <%= text_area_tag :name %>
+    </p>
+
+    <p>
+      <strong>Hotel/Lodging:</strong><br>
+
+      <%= text_area_tag :hotel %>
+    </p>
+
+    <p>
+      <strong>Flight Information:</strong><br>
+      <%= text_area_tag :flight_info %>
+    </p>
+
+    <p>
+      <strong>Arrival Date:</strong><br>
+      <%= date_field_tag(:arrival_date, Date.today)%>
+    </p>
+
+    <p>
+      <strong>Return Date:</strong><br>
+      <%= date_field_tag(:return_date, Date.today)%>
+    </p>
+
+    <p>
+      <%= submit_tag "Edit Itinerary" %>
+    </p>
+    <% end %>
+  </div>
