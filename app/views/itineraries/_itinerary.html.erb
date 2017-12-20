@@ -1,0 +1,13 @@
+  <h2 class="trip-name"><%= @itinerary.name %></h2>
+  <dt>
+      at:
+      <strong class='location'><%= @itinerary.concert.venue %> - <%= @itinerary.concert.location %></strong>
+      <p>Hotel:</p>
+        <%= @itinerary.hotel %>
+      <p>Flight Info:</p>
+        <%= @itinerary.flight_info %>
+      <p>Arrival Date:</p>
+        <%= pretty_date(@itinerary.arrival_date) %>
+      <p>Return Date:</p>
+        <%= pretty_date(@itinerary.return_date) %>
+  </dt>

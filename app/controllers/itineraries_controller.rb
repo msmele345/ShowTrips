@@ -1,5 +1,8 @@
 class ItinerariesController < ApplicationController
 
+  before_action :redirect_unless_logged_in
+
+
   def new
     @itinerary = Itinerary.new
     @concert = Concert.find(params[:concert_id])
@@ -23,13 +26,27 @@ class ItinerariesController < ApplicationController
     end
   end
 
+  def update
+    # raise params.inspect
+    @itinerary = Itinerary.find_by(:id => params[:id])
+    p @itinerary
+
+    if @itinerary.update(itinerary_params)
+      redirect_to itinerary_path(@itinerary)
+    else
+      @errors = @itinerary.errors.full_messages
+      render :edit
+    end
+  end
+
 
   def show
+    @itinerary = Itinerary.find_by(:id => params[:id])
   end
 
 
   def destroy
-    @itinerary = Itinerary.find_by(:id => params[:trip])
+    @itinerary = Itinerary.find_by(:id => params[:id])
     @itinerary.destroy
     redirect_to user_path(current_user.id)
   end

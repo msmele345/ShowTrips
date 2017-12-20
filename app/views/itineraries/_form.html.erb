@@ -1,0 +1,43 @@
+
+<div class="new-int-form">
+  <%= render partial: 'shared/errors', locals: {errors: @errors} if @errors %>
+  <p>
+    <%= form_tag [@concert, @itinerary], url: concert_itineraries_path(@concert), method: "POST" do |f| %>
+    </p>
+
+    <p>
+      <strong>Trip Name:</strong><br>
+      <%= f.label :name %>
+      <%= text_area_tag :name %>
+    </p>
+
+    <p>
+      <strong>Hotel/Lodging:</strong><br>
+      <%= f.label :hotel %>
+      <%= text_area_tag :hotel %>
+    </p>
+
+    <p>
+      <strong>Flight Information:</strong><br>
+      <%= f.label :flight_info %>
+      <%= text_area_tag :flight_info %>
+    </p>
+
+    <p>
+      <strong>Arrival Date:</strong><br>
+      <%= f.label :arrival_date %>
+      <%= date_field_tag(:arrival_date, Date.today)%>
+    </p>
+
+    <p>
+      <strong>Return Date:</strong><br>
+      <%= f.label :return_date %>
+      <%= date_field_tag(:return_date, Date.today)%>
+    </p>
+
+    <p>
+      <%= submit_tag "Save Itinerary" %>
+    </p>
+
+  <% end  %>
+</div>

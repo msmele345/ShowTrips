@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :itineraries, only: [:new, :create, :show,:destroy]
   end
 
+  resources :itineraries
+
   resources :sessions, only: [:new, :create, :destroy]
 
     get '/login', to: 'sessions#new'
@@ -17,6 +19,8 @@ Rails.application.routes.draw do
     get '/logout', to: 'sessions#destroy'
 
     delete '/users/:user_id', to: "itineraries#destroy"
+    post '/users/:user_id', to: "itineraries#update"
+
 
     post '/concerts/:concert_id', to: "attendances#create"
 
@@ -29,6 +33,9 @@ end
 
 
 ##TODO
+##PROTECT ROUTES ON EDIT AND DELETE FROM INT SHOW AND USER SHOW !@!!!!!
+
+##STYLE INT SHOW
 ##Add styling for delete button
 ##add edit button
 ## style itinerary show
