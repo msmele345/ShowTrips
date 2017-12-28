@@ -13,22 +13,24 @@
 </div>
 
 
+<h2 class="attendee-header">Who is all going?</h2>
+
 <div class="attendee-list">
-  <h2 class="attendee-header">Who is all going?</h2>
   <ul>
     <dt><%= render partial: 'attendee', collection: @concert.attendees %></dt>
   </ul>
 </div>
 
 <div class="add-attendee">
-  <% if logged_in? %>
+  <% if logged_in? && !@concert.grab_ids.include?(current_user.id) %>
       <%= form_tag [@concert, @attendance], url: concert_attendances_path(@concert),  method: 'POST', id: "attendee-form" do |t| %>
         <%= submit_tag "I'll be there!" %>
     <% end  %>
   <% end %>
 </div>
 
+<h1 class="itinerary-new-header">Going? Make it offical!: </h1>
+
 <div class="add-itinerary">
-  <h3>Going? Add your trips details: </h3>
-  <p><%= link_to "New Itinerary", new_concert_itinerary_path(@concert) %></p>
-</div
+  <p><%= link_to "Add Trip", new_concert_itinerary_path(@concert) %></p>
+</div>

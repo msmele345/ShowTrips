@@ -1,7 +1,10 @@
 <h2 align="center">Login</h2>
 
-<div class="login-form">
+<div align="center" class="errors">
   <%= render 'shared/errors', locals: {errors: @errors} if @errors %>
+</div>
+
+<div class="login-form">
   <%= form_tag '/login' do |t| %>
   <p>
     Email: <br>

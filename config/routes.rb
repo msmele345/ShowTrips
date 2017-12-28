@@ -34,13 +34,5 @@ end
 
 ##TODO
 ##PROTECT ROUTES ON EDIT AND DELETE FROM INT SHOW AND USER SHOW !@!!!!!
-
-##STYLE INT SHOW
-##Add styling for delete button
-##add edit button
-## style itinerary show
-
-##AJAX??
-##create partials showing int info
-##Itinerary show? Where are these displayed othert than user profile?
-##CSS
+##Fix edit form so that it presents current values
+##Fix itineraries show from a style standpoint

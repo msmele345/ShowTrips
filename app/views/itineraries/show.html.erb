@@ -3,10 +3,9 @@
   <%= render 'itinerary' %>
 </div>
 
-
-
 <div>
   <h1 align="center">Edit your ShowTrip</h1>
+    <p><%= button_to "Delete Trip", @itinerary, method: :delete %></p>
       <%= render 'edit' %>
 </div>
 

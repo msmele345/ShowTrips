@@ -4,12 +4,16 @@ class Concert < ApplicationRecord
 
 
 
-  # def todays_event?
-  #   self.starts_ > Time.zone.now.beginning_of_day && self.starts_at < Time.zone.now.end_of_day
-  # end
+  def grab_ids
+    self.attendees.pluck(:id)
+  end
 
   def upcoming?
     self.date > DateTime.now
   end
 
+##FOR LATER DATETIME
+  # def todays_event?
+  #   self.starts_ > Time.zone.now.beginning_of_day && self.starts_at < Time.zone.now.end_of_day
+  # end
 end
