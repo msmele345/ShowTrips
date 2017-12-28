@@ -9,6 +9,7 @@ class ConcertsController < ApplicationController
 
   def show
     @concert = Concert.find_by(id: params[:id])
+    @songs = grab_songs
     render :show
   end
 

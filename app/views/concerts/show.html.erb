@@ -34,3 +34,10 @@
 <div class="add-itinerary">
   <p><%= link_to "Add Trip", new_concert_itinerary_path(@concert) %></p>
 </div>
+
+
+<div class="songs">
+  <% @songs.each do |song| %>
+    <dt><%= song %></dt>
+  <% end %>
+</div>

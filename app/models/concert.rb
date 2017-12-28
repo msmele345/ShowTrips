@@ -2,8 +2,6 @@ class Concert < ApplicationRecord
   has_many :attendances
   has_many :attendees, through: :attendances, source: :attendee
 
-
-
   def grab_ids
     self.attendees.pluck(:id)
   end
