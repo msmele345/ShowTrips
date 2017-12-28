@@ -21,8 +21,7 @@
         <%= pretty_date(trip.arrival_date) %>
       <p>Return Date:</p>
         <%= pretty_date(trip.return_date) %>
-      <p><%= button_to "Edit Trip", "/itineraries/#{trip.id}" %></p>
-      <p><%= button_to "Delete Trip", @itinerary, method: :delete, params: {trip: trip.id} %></p>
+      <p><%= link_to "Edit Trip", "/itineraries/#{trip.id}" %></p>
     </dt>
 
       <% end %>

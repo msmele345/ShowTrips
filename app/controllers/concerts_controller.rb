@@ -9,6 +9,8 @@ class ConcertsController < ApplicationController
 
   def show
     @concert = Concert.find_by(id: params[:id])
+    # @songs = AppleResponse.grab_songs(@concert.band)
+    @songs = grab_songs(@concert.band)
     render :show
   end
 
