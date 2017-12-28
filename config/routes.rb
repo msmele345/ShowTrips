@@ -36,3 +36,9 @@ end
 ##PROTECT ROUTES ON EDIT AND DELETE FROM INT SHOW AND USER SHOW !@!!!!!
 ##Fix edit form so that it presents current values
 ##Fix itineraries show from a style standpoint
+
+
+##API
+##limit data
+##find a way to get it in a service object
+##clean up ill be there button

@@ -37,7 +37,10 @@
 
 
 <div class="songs">
-  <% @songs.each do |song| %>
-    <dt><%= song %></dt>
+  <h3>Epic Tracks:</h3>
+  <ul>
+    <% @songs.each do |song| %>
+      <dt><%= song %></dt>
   <% end %>
+  </ul>
 </div>
